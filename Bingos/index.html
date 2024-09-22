@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Desktop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Virtual Desktop -->
+    <div id="desktop">
+        <div class="overlay"></div>
+        <!-- Draggable Calculator App Window -->
+        <div id="calculator" class="window" style="display: none;">
+            <div class="title-bar" id="title-bar-calculator">
+                <span>Calculator</span>
+                <div class="window-controls">
+                    <button class="maximize-btn" onclick="maximizeWindow('calculator')">=</button>
+                    <button class="close-btn" onclick="closeWindow('calculator')">X</button>
+                </div>
+            </div>
+            <iframe src="../Applications/calculator/index.html"></iframe>
+            <div class="resizer"></div>
+        </div>
+        <div id="internet" class="window" style="display: none;">
+            <div class="title-bar" id="title-bar-internet">
+                <span>Internet</span>
+                <div class="window-controls">
+                    <button class="maximize-btn" onclick="maximizeWindow('internet')">=</button>
+                    <button class="close-btn" onclick="closeWindow('internet')">X</button>
+                </div>
+            </div>
+            <iframe src="../Applications/Internet/index.html"></iframe> 
+            <div class="resizer"></div>
+        </div>    
+        <div id="aetherlexai" class="window" style="display: none;">
+            <div class="title-bar" id="title-bar-aetherlexai">
+                <span>AetherLex AI</span>
+                <div class="window-controls">
+                    <button class="maximize-btn" onclick="maximizeWindow('aetherlexai')">=</button>
+                    <button class="close-btn" onclick="closeWindow('aetherlexai')">X</button>
+                </div>
+            </div>
+            <iframe src="../Applications/AetherLexAI/index.html"></iframe>
+            <div class="resizer"></div>
+        </div>  
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <button id="startmenubutton"  onclick="startmenuClicked()" style="all: initial;">
+            <img id="start-button" src="../Icons/start_icon.png" alt="Start Icon" style="width: 24px; height: 24px; padding-right: 10px;">
+        </button>
+
+        <div class="taskbar-buttons">
+            <button id="calculator-btn" onclick="openWindow('calculator')">
+                <img src="../Icons/calculator.png" alt="Calculator Icon" style="width: 24px; height: 24px;">
+            </button>
+        </div>
+    </div>
+    <div class="start-menu" style="display: none;" id="startMenu">
+        <div class="container">
+            <li onclick="openWindow('calculator')">Calculator</li>
+            <li onclick="onwindow('internet')" >The internet</li>
+            <li onclick="onwindow('aetherlexai')" >AetherLex AI</li>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
