@@ -1,2 +1,3 @@
 # Bingos-OS
-A small virtual desktop
+
+A stupid and fun experiment i did.
